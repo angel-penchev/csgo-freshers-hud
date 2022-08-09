@@ -19,7 +19,7 @@
         opacity: 0;
     }
     &.left {
-        left: 10px;
+        left: 30px;
         .player {
             .row {
                 flex-direction: row;
@@ -47,7 +47,7 @@
         }
     }
     &.right {
-        right: 10px;
+        right: 30px;
         .player {
             flex-direction: row-reverse;
             .dead-stats {
@@ -90,7 +90,6 @@
         }
     }  
     .player {
-        width: 645px;
         height: 70px;
         margin-bottom: 4px;
         display: flex;
@@ -136,9 +135,6 @@
                 }
             }
         }
-        &:last-child .player_data {
-            border-radius: 0 0 20px 20px;
-        }
         .player_side_bar {
             width: 10px;
             height: 70px;
@@ -173,7 +169,7 @@
         }
         .player_data {
             background-color: var(--sub-panel-color);
-            width: 415px;
+            width: 370px;
             display: flex;
             flex-direction: row;
             position: relative;
