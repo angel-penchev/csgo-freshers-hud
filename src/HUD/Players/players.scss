@@ -21,6 +21,9 @@
     &.left {
         left: 30px;
         .player {
+            .hp_bar {
+                left: 0;
+            }
             .row {
                 flex-direction: row;
                 .grenades {
@@ -56,6 +59,7 @@
             .player_data {
                 flex-direction: row-reverse;
                 .hp_bar {
+                    right: 0;
                     align-self: flex-end;
                 }
                 .row {
@@ -90,7 +94,7 @@
         }
     }  
     .player {
-        height: 70px;
+        height: 69px;
         margin-bottom: 4px;
         display: flex;
         flex-direction: row;
@@ -98,8 +102,6 @@
         &.active {
             .avatar img {
                 filter: drop-shadow(0px 1px 2px white);
-                width: 90%;
-                height: 90%;
             }
         }
         &.dead {
@@ -174,17 +176,19 @@
             flex-direction: row;
             position: relative;
             height: 100%;
+            .hp_bar {
+                height: 32px; // TODO: change to 23px when player rows increase
+                position: absolute;
+                top: 0;
+                &.low {
+                    background-color: red;
+                }
+            }
             .player_stats {
                 display: flex;
                 flex-direction: column;
                 flex: 1;
                 min-width: 0;
-                .hp_bar {
-                    height: 2px;
-                    &.low {
-                        background-color: red;
-                    }
-                }
                 .row {
                     flex: 1;
                     display: flex;
@@ -300,6 +304,7 @@
                 align-items: end;
                 justify-content: center;
                 overflow: hidden;
+                z-index: 10;
                 .videofeed {
                     width:70px;
                     height:70px;

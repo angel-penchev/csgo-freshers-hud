@@ -76,7 +76,8 @@ const Player = ({ player, isObserved }: IProps) => {
   return (
     <div className={`player ${player.state.health === 0 ? "dead" : ""} ${isObserved ? 'active' : ''}`}>
       <div className="player_data">
-        <Avatar steamid={player.steamid} height={57} width={57} showSkull={false} showCam={false} sidePlayer={true} />
+        <Avatar steamid={player.steamid} height={70} width={70} showSkull={false} showCam={false} sidePlayer={true} />
+        <div className={`hp_bar ${player.state.health <= 20 ? 'low' : ''}`} style={{ width: `${player.state.health}%` }}></div>
         <div className="dead-stats">
           <div className="labels">
             <div className="stat-label">K</div>
@@ -100,7 +101,6 @@ const Player = ({ player, isObserved }: IProps) => {
               {player.state.round_kills ? <div className="roundkills-container">{player.state.round_kills}</div> : null}
             </div>
           </div>
-          <div className={`hp_bar ${player.state.health <= 20 ? 'low' : ''}`} style={{ width: `${player.state.health}%` }}></div>
           <div className="row">
             <div className="armor_and_utility">
               <Bomb player={player} />
